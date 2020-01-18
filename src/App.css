@@ -42,14 +42,10 @@ body {
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
 }
-
-
-
 
 .user-card {
   border: 1px solid black;
@@ -91,6 +87,17 @@ img {
 
 .user-card a:hover {
   font-weight: 900;
+  text-decoration: none;
+}
+
+.card-title a {
+  color: #2d2d37;
+  text-decoration: none;
+}
+
+.card-title a:hover {
+  font-weight: 900;
+  text-decoration: none;
 }
 
 .container {
