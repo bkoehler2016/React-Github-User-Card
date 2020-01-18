@@ -1,16 +1,21 @@
 import React from "react";
+import { Card, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 
 const UserCard = props => {
   return (
-    <div className="user-card">
-      <img src={props.img} width="20%" alt={props.login}></img>
-      <h2>{props.name}</h2>
-      <span>
-        <a href={props.url}>Profile</a>
-      </span>
+    <div>
+      <Card>
+        <img src={props.img} width="20%" alt={props.login}></img>
+        <CardTitle>
+          <strong>{props.name}</strong>
+        </CardTitle>
+        <CardSubtitle>
+          <a href={props.url}>Profile</a>
+        </CardSubtitle>
 
-      <p>Bio: {props.bio}</p>
-      <p>Location: {props.location}</p>
+        <CardBody>Bio: {props.bio}</CardBody>
+        <CardSubtitle>Location: {props.location}</CardSubtitle>
+      </Card>
     </div>
   );
 };

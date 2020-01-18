@@ -20,7 +20,7 @@ class App extends React.Component {
 
   componentDidMount() {
     axios
-      .get("https://api.github.com/users/bkoehler2016")
+      .get(`https://api.github.com/users/bkoehler2016`)
       .then(res => {
         this.setState({
           user: [res.data]
@@ -57,6 +57,7 @@ class App extends React.Component {
             <Col md={7}>
               <Input
                 type="text"
+                placeholder="Search Users"
                 value={this.state.userSearch}
                 onChange={this.handleChange}
                 name="userSearch"
