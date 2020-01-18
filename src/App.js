@@ -3,7 +3,7 @@ import "./App.css";
 import axios from "axios";
 import UserCard from "./components/UserCard";
 import FollowerCard from "./components/FollowersCard";
-import { Button } from "reactstrap";
+import { Col, Row, Button, Input, Form } from "reactstrap";
 
 class App extends React.Component {
   state = {
@@ -52,13 +52,21 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>GitHub User</h1>
-        <input
-          type="text"
-          value={this.state.userSearch}
-          onChange={this.handleChange}
-          name="userSearch"
-        />
-        <Button onClick={this.findUser}>Find User</Button>
+        <Form>
+          <Row form>
+            <Col md={7}>
+              <Input
+                type="text"
+                value={this.state.userSearch}
+                onChange={this.handleChange}
+                name="userSearch"
+              />
+            </Col>
+            <Button color="primary" onClick={this.findUser}>
+              Find User
+            </Button>
+          </Row>
+        </Form>
         {this.state.user.map(item => (
           <UserCard
             key={item.id}
